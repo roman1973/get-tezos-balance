@@ -1,0 +1,33 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  @include flex($justify: center, $align: center);
+
+  background: white;
+
+  .deleteButton {
+    @include box-size(rem(40px));
+    
+    border: none;
+    margin: 0 rem(12px);
+
+    svg {
+      @include box-size(rem(40px));
+
+      cursor: pointer;
+
+      &:hover {
+        path {
+          &:first-child{
+            fill: red;
+          }
+
+          &:last-child{
+            fill: white;
+          }
+        }  
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.addButton {
+  font-size: rem(20px);
+  padding: rem(12px) rem(24px);
+  border-radius: $big-radius;
+  cursor: pointer;
+  
+  &.active {
+    background-color: $color-puerto-rico;
+  }
+}

@@ -1,0 +1,12 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  flex-grow: 1;  
+  padding-right: rem(30px);  
+
+  @include media($mobile-l) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

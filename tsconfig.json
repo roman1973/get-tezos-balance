@@ -1,26 +1,49 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "baseUrl": "src/",
+    "paths": {
+      "components": ["components"],
+      "containers": ["containers"],
+      "constants": ["constants"],
+      "common": ["common"],
+      "store": ["store"],
+      "types": ["types"],
+      "public": ["public"],
+      "helpers": ["helpers"],
+      "images": ["images"],
+      "styles": ["styles"],
+
+      "components/*": ["components/*"],
+      "containers/*": ["containers/*"],
+      "constants/*": ["constants/*"],
+      "common/*": ["common/*"],
+      "store/*": ["store/*"],
+      "types/*": ["types/*"],
+      "public/*": ["public/*"],
+      "helpers/*": ["helpers/*"],
+      "images/*": ["images/*"],
+      "styles/*": ["styles/*"],
+    }
   },
   "include": [
-    "src"
-  ]
+    "**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "/react-app-env.d.ts",
+    ".eslintrc.js"
+  ],
+  "exclude": ["node_modules"],
 }

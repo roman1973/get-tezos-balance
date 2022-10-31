@@ -1,0 +1,22 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  padding: 0 rem(100px);
+
+  @include media($tablet) {
+    padding: 0 rem(20px);
+
+  }
+  .inputsWrapper{
+    @include flex($align: center);
+
+    margin-bottom: rem(70px);
+
+    @include media($mobile-l){
+      @include flex($direction: column);
+    }
+
+    }
+
+}

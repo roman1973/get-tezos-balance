@@ -1,0 +1,19 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.headerWrapper {
+    @include flex($justify: space-between, $align: center);
+    width: 100%;
+    max-width: $laptop-l;
+    position: fixed;
+    top: 0;
+    padding: rem(27px) rem(66px);
+    font-size: rem(40px);
+    color: $rose;
+
+    @include media($tablet) {
+      font-size: rem(20px);  
+      padding: rem(15px) rem(25px);
+
+    }
+}

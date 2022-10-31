@@ -1,0 +1,26 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  display: grid;
+  grid-template: auto / 5fr 3fr max-content;
+  gap: rem(3px);
+  max-width: 80%;
+  margin: 0 auto;
+  background: $rose;
+
+  @include media($tablet) {
+    max-width: 100%;
+  }
+
+  span {
+    @include ellipsis(1);
+
+    height: max-content;
+    padding: rem(10px);
+    font-size: rem(16px);
+    background: white;
+  }
+
+
+}
