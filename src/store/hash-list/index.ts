@@ -53,12 +53,15 @@ const hashListSlice = createSlice({
       state.value = state?.value.filter((item) => item.hash !== action.payload)
       localStorage.setItem('hashList', JSON.stringify(state))
     },
+    hashListErrorRemove: (state) => {
+      state.error = null
+      localStorage.setItem('hashList', JSON.stringify(state))
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchHash.pending, (state) => {
         state.isLoading = true
-        state.error = null
         localStorage.setItem('hashList', JSON.stringify(state))
       })
       .addCase(fetchHash.fulfilled, (state, action) => {
@@ -74,7 +77,7 @@ const hashListSlice = createSlice({
   },
 })
 
-export const { hashListRemove } = hashListSlice.actions
+export const { hashListRemove, hashListErrorRemove } = hashListSlice.actions
 
 export const selectHashList = (state: RootState) => state.hashList
 

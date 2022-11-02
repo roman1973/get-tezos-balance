@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import BalanceList from 'components/balance-list'
 import Select from 'common/select'
 import ButtonAdd from 'common/button-add'
-import { selectHashList } from 'store/hash-list'
+import { selectHashList, hashListErrorRemove } from 'store/hash-list'
 import { optionDelete } from 'store/options'
 
 import { selectHash, hashValueReset } from 'store/hash'
@@ -30,8 +30,8 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (error) {
       toast.error(error.message)
-
       dispatch(hashValueReset())
+      dispatch(hashListErrorRemove())
     } else if (!isLoading) {
       dispatch(optionDelete(hash.value))
       dispatch(hashValueReset())

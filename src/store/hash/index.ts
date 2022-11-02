@@ -25,7 +25,7 @@ const hashSlice = createSlice({
       localStorage.setItem('hash', JSON.stringify(state))
     },
     hashValueReset: (state) => {
-      state.value = {}
+      state.value = { value: '' }
 
       localStorage.setItem('hash', JSON.stringify(state))
     },

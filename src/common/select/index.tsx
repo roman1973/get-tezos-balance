@@ -17,16 +17,16 @@ const Select: React.FC<Props> = ({ hash }) => {
 
   const dispatch = useAppDispatch()
 
-  const handleChange = (option: OnChangeValue<Option, boolean>) => {
+  const handleChange = (option: OnChangeValue<Option | string, boolean>) => {
     dispatch(hashValueUpdate(option as Option))
   }
 
   return (
     <div className={styles.wrapper}>
       <CreatableSelect
-        placeholder="Input or select hash"
+        placeholder={options.length ? 'Input or select hash' : 'Input hash'}
         classNamePrefix="react-select"
-        value={hash}
+        value={hash.value ? hash : ''}
         options={options}
         onChange={handleChange}
         isSearchable
